@@ -3,9 +3,7 @@ package ru.mintrans.mintransstartsocial.services;
 import ru.mintrans.mintransstartsocial.model.User;
 import ru.mintrans.mintransstartsocial.dao.UserDao;
 import ru.mintrans.mintransstartsocial.dao.UserDaoImpl;
-import ru.mintrans.mintransstartsocial.web.dto.CreateUserDto;
 
-import java.net.http.HttpResponse;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

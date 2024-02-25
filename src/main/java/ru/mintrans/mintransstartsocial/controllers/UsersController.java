@@ -6,7 +6,6 @@ import ru.mintrans.mintransstartsocial.services.UserService;
 
 import java.net.HttpURLConnection;
 import java.text.ParseException;
-import java.util.Date;
 import java.util.List;
 
 @RestController
