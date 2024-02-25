@@ -6,14 +6,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.mintrans.mintransstartsocial.services.UserService;
 
+import java.net.HttpURLConnection;
 import java.text.ParseException;
+import java.util.Date;
 
 @RestController
 public class UsersController {
 
     UserService userService = new UserService();
-    @GetMapping("/add-user")
-    public int add (String username, int password) throws ParseException {
-        return userService.add(username, password);
+    @PostMapping("/add-user")
+    public int add (String firstName, String secondName, String dateOfBirth) throws ParseException {
+        userService.add(firstName, secondName, dateOfBirth);
+        return HttpURLConnection.HTTP_OK;
     }
 }

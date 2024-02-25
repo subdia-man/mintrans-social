@@ -13,15 +13,11 @@ import java.util.Date;
 public class UserService {
     UserDao dao = new UserDaoImpl();
 
-    public int add (String username, int password) throws ParseException {
+    public void add (String firstName, String secondName, String dateOfBirth) throws ParseException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String dateString = "25/12/2022";
-        Date date = dateFormat.parse(dateString);
-
-        User user = new User("John", "Kovarsky", date);
-        user.setFirstname(username);
+        Date date = dateFormat.parse(dateOfBirth);
+        User user = new User(firstName, secondName, date);
         dao.saveUser(user);
-        return 0;
     }
 
 }
