@@ -1,10 +1,13 @@
 package ru.mintrans.mintransstartsocial.model;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "news")
 public class News {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String header;
     private String body;

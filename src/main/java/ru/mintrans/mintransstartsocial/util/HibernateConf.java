@@ -8,6 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
+import ru.mintrans.mintransstartsocial.model.News;
 import ru.mintrans.mintransstartsocial.model.User;
 public class HibernateConf {
     private static SessionFactory factory;
@@ -30,6 +31,7 @@ public class HibernateConf {
 
             configuration.setProperties(settings);
             configuration.addAnnotatedClass(User.class);
+            configuration.addAnnotatedClass(News.class);
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties())
