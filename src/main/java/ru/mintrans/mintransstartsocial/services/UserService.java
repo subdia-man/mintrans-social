@@ -19,6 +19,13 @@ public class UserService {
         dao.saveUser(user);
     }
 
+    public void add (String firstName, String secondName, String dateOfBirth, boolean isAdmin) throws ParseException {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = dateFormat.parse(dateOfBirth);
+        User user = new User(firstName, secondName, date, isAdmin);
+        dao.saveUser(user);
+    }
+
     public User get (long id) {
         return dao.getUserById(id);
     }
