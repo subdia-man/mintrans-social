@@ -50,7 +50,8 @@ public class NewsDaoImpl implements NewsDao {
             if(transaction != null)
                 transaction.rollback();
         }
-        return news;    }
+        return news;
+    }
 
     @Override
     public void updateNews(News news) {
