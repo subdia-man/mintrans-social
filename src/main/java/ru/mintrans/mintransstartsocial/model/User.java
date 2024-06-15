@@ -19,6 +19,7 @@ public class User {
     private long id;
     private String firstname;
     private String lastname;
+    private boolean isAdministrator = false;
 
     @Temporal(TemporalType.DATE)
     private Date dob;
@@ -31,6 +32,14 @@ public class User {
         this.lastname = lastname;
         this.dob = dob;
     }
+
+    public User(String firstname, String lastname, Date dob, boolean isAdministrator) {
+        super();
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.dob = dob;
+    }
+
     public long getId() {
         return id;
     }
@@ -55,8 +64,16 @@ public class User {
     public void setDob(Date dob) {
         this.dob = dob;
     }
+    public boolean isAdministrator() {
+        return isAdministrator;
+    }
+    public void setIsAdministrator(boolean administrator) {
+        isAdministrator = administrator;
+    }
+
     @Override
     public String toString() {
-        return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", dob=" + dob + "]";
+        return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", dob=" + dob + ", " +
+                "isAdministrator= " + isAdministrator + "]";
     }
 }
