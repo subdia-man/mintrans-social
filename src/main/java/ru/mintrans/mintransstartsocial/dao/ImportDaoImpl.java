@@ -13,7 +13,7 @@ public class ImportDaoImpl {
 
     private SessionFactory factory = HibernateConf.getFactory();
 
-    void saveImport(Import newImport) {
+    public void saveImport(Import newImport) {
         Transaction transaction = null;
         try(Session session = factory.openSession()) {
             transaction = session.beginTransaction();
@@ -25,7 +25,7 @@ public class ImportDaoImpl {
         }
     }
 
-    Import getImportById(long id) {
+    public Import getImportById(long id) {
         Transaction transaction = null;
         Import newImport = null;
         try(Session session = factory.openSession()) {
@@ -39,7 +39,7 @@ public class ImportDaoImpl {
         return newImport;
     }
 
-    List<Import> getAllImports() {
+    public List<Import> getAllImports() {
         Transaction transaction = null;
         List<Import> imports = null;
         try(Session session = factory.openSession()) {
@@ -53,7 +53,7 @@ public class ImportDaoImpl {
         return imports;
     }
 
-    void updateImport(Import importToUpdate) {
+    public void updateImport(Import importToUpdate) {
         Transaction transaction = null;
         try(Session session = factory.openSession()) {
             transaction = session.beginTransaction();
@@ -65,7 +65,7 @@ public class ImportDaoImpl {
         }
     }
 
-    void deleteImportById(long id) {
+    public void deleteImportById(long id) {
         Transaction transaction = null;
         try(Session session = factory.openSession()) {
             transaction = session.beginTransaction();
