@@ -1,5 +1,6 @@
 package ru.mintrans.mintransstartsocial.util;
 
+import org.jetbrains.annotations.NotNull;
 import ru.mintrans.mintransstartsocial.model.Import;
 import ru.mintrans.mintransstartsocial.model.News;
 
@@ -24,11 +25,11 @@ public class ImportToNewsConverter {
         return incomingNewsFromImport;
     }
 
-    public String GetImportFromReference (Import incomingImport) {
+    public String GetImportFromReference (@org.jetbrains.annotations.NotNull Import incomingImport) {
         return incomingImport.getFrom();
     }
 
-    public String GetImportWhereReference (Import incomingImport) {
+    public String GetImportWhereReference (@NotNull Import incomingImport) {
         return incomingImport.getWhere();
     }
 
